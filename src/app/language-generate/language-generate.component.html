@@ -1,23 +1,12 @@
-<!-- <mat-form-field>
-  <mat-label>Selected tab index</mat-label>
-  <input matInput type="number" [formControl]="selected">
-</mat-form-field> -->
-<!-- <input [value]="indexValue"> -->
+<button mat-raised-button (click)="addTab()">Add Tab</button>
 
 <mat-tab-group  (selectedTabChange)="tabChanged($event)" >
   <mat-tab  *ngFor="let tab1 of tabs; let index = index" [label]="tab1" >
-  <mat-tab-group >
+  <mat-tab-group>
     <mat-tab *ngFor="let tab2 of subtabs; let index = index" [label]="tab2" > 
-      <!-- contents of {{data[tab][tab2]["ticketpurchased"]}} -->
-      <!-- contents of {{tab}} -->
-      <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"></table> -->
+      <!-- contents {{data["en-US"][tab2]["ticketpurchased"]}} -->
     </mat-tab>
     </mat-tab-group>
-
   </mat-tab>
 </mat-tab-group>
 
-
-<!-- Copyright 2018 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->

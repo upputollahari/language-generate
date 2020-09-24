@@ -11,11 +11,22 @@ import { MatTabChangeEvent, MatTabGroup } from "@angular/material/tabs";
 })
 export class LanguageGenerateComponent implements OnInit {
   // tabs = ["First", "Second", "Third"];
- 
+ languageCode;
   indexValue=0;
   // selected = new FormControl(1);
   dataSource=['name','pos'];
-  data = {
+data;
+  tabs=[];
+  subtabs=[];
+  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
+    // console.log('tabChangeEvent => ', tabChangeEvent);
+    // console.log('index => ', tabChangeEvent.index);
+    this.indexValue=tabChangeEvent.index;
+    this.display();
+
+  }
+  constructor() {
+    this.data = {
     "en-US":{
         "wrapper1":{
             "ticketpurchased": "Tickets purchased successfully",
@@ -54,25 +65,13 @@ export class LanguageGenerateComponent implements OnInit {
         }
     }
 };
-  tabs=[];
-  subtabs=[];
-  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
-    // console.log('tabChangeEvent => ', tabChangeEvent);
-    // console.log('index => ', tabChangeEvent.index);
-    this.indexValue=tabChangeEvent.index;
-    this.display();
-
   }
-  constructor() {}
-
-// ngOnChanges(){
-//   console.log("index value :"+ this.indexValue);
-// }
   ngOnInit() {
   this.tabs=Object.keys(this.data).filter(data=>{
     return data;
   });
   this.display();
+  // this.addTab();
   }
 
   display(){
@@ -81,5 +80,10 @@ export class LanguageGenerateComponent implements OnInit {
       return data;
   });
   console.log(this.subtabs);
+  }
+
+  addTab(){
+    this.data["en-PS"]=this.data["en-US"];
+    console.log(this.data);
   }
 }
