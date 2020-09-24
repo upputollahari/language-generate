@@ -37,9 +37,11 @@ export class LanguageGenerateComponent implements OnInit {
 this.subtabChanged=(event:MatTabChangeEvent):void=>{
 console.log("event "+event.index);
 this.contentIndex=event.index;
- this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
-      return data;
-    })
+this.display2();
+
+//  this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
+//       return data;
+//     })
 } 
   };
 // subtabChanged=(event:MatTabChangeEvent):void=>{
@@ -94,6 +96,7 @@ this.contentIndex=event.index;
       return data;
     });
     this.display();
+    this.display2();
     // this.addTab();
       this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
       return data;
@@ -116,8 +119,10 @@ this.contentIndex=event.index;
     );
     console.log(this.subtabs);
   }
-  display2(tabValue) {
-    console.log("tabValue " + tabValue);
+  display2() {
+     this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
+      return data;
+    })
   }
 
   addTab() {
