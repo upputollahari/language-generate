@@ -6,6 +6,6 @@ export class LangService {
 
   constructor(private http:HttpClient) { }
 getData(){
-  return this.http.get('/assets/lang.json');
+  return this.http.get('./assets/lang.json');
 }
 }

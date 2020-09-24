@@ -3,11 +3,16 @@
 
 <mat-tab-group  (selectedTabChange)="tabChanged($event)" >
   <mat-tab  *ngFor="let tab1 of tabs; let index = index" [label]="tab1" >
-  <mat-tab-group>
+  <mat-tab-group (selectedTabChange)="subtabChanged($event)">
     <mat-tab *ngFor="let tab2 of subtabs; let index = index" [label]="tab2" > 
       <!-- contents {{data["en-US"][tab2]["ticketpurchased"]}} -->
+      <table *ngFor="let i of content">
+        <tr>{{i}}</tr>
+      </table>
+
     </mat-tab>
     </mat-tab-group>
+    
   </mat-tab>
 </mat-tab-group>
 

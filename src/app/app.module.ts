@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 import { LangService } from './lang.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,
@@ -21,7 +22,8 @@ import { LangService } from './lang.service';
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    MatTableModule ],
+    MatTableModule,
+    HttpClientModule ],
   declarations: [ AppComponent, HelloComponent, LanguageGenerateComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LangService]
