@@ -19,7 +19,7 @@ import { LangService } from "../lang.service";
 export class LanguageGenerateComponent implements OnInit {
   // tabs = ["First", "Second", "Third"];
   selected = new FormControl(0);
-  contentIndex=0;
+  contentIndex = 0;
   languageCode;
   indexValue = 0;
   content;
@@ -28,36 +28,6 @@ export class LanguageGenerateComponent implements OnInit {
   data: any = {};
   tabs = [];
   subtabs = [];
-  // subtabChanged;
-  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
-    // console.log('tabChangeEvent => ', tabChangeEvent);
-    // console.log('index => ', tabChangeEvent.index);
-    this.indexValue = tabChangeEvent.index;
-    // this.display(); 
-     this.subtabs = Object.keys(this.data[this.tabs[this.indexValue]]).filter(
-      data => {
-        return data;
-      }
-    );
-  };
-  subtabChanged=(event:MatTabChangeEvent):void=>{
-console.log("event "+event.index);
-this.contentIndex=event.index;
-   this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
-      return data;
-    })
-
-//  this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
-//       return data;
-//     })
-}
-// subtabChanged=(event:MatTabChangeEvent):void=>{
-// console.log("event "+event.index);
-// this.contentIndex=event.index;
-//  this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
-//       return data;
-//     })
-// }  
   constructor() {
     this.data = {
       "en-US": {
@@ -102,49 +72,41 @@ this.contentIndex=event.index;
     this.tabs = Object.keys(this.data).filter(data => {
       return data;
     });
-    // this.display();
-    // this.display2();
-    // this.addTab();
     this.subtabs = Object.keys(this.data[this.tabs[this.indexValue]]).filter(
       data => {
         return data;
       }
     );
-      this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
+    this.content = Object.values(
+      this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]
+    ).filter(data => {
       return data;
-    })
-    
-  //  this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
-  //     return data;
-  //   })
+    });
     console.log(this.content);
   }
 
-
-
-  // display() {
-  //   console.log(" index is : " + this.indexValue);
-  //   this.subtabs = Object.keys(this.data[this.tabs[this.indexValue]]).filter(
-  //     data => {
-  //       return data;
-  //     }
-  //   );
-  //   console.log(this.subtabs);
-  // }
-  // display2() {
-  //    this.content=Object.values(this.data[this.tabs[this.indexValue]][this.subtabs[this.contentIndex]]).filter(data=>{
-  //     return data;
-  //   })
-  // }
-
   addTab() {
     this.data["en-ps"] = this.data["en-US"];
-    // this.data["en-ps1"]=this.data["en-US"];
-
     this.tabs = Object.keys(this.data).filter(data => {
       return data;
     });
     console.log(this.data);
-    // code.value='';
+  }
+
+  tabChanged(event) {
+    this.indexValue = event.index;
+    this.subtabs = Object.keys(this.data[this.tabs[event.index]]).filter(
+      data => {
+        return data;
+      }
+    );
+  }
+  subtabChanged(event) {
+    this.contentIndex = event.index;
+    this.content = Object.values(
+      this.data[this.tabs[this.indexValue]][this.subtabs[event.index]]
+    ).filter(data => {
+      return data;
+    });
   }
 }
