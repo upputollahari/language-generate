@@ -1,4 +1,5 @@
-<button mat-raised-button (click)="addTab()">Add Tab</button>
+<button  (click)="addTab()">Add Tab</button>
+<!-- <input #fname> -->
 
 <mat-tab-group  (selectedTabChange)="tabChanged($event)" >
   <mat-tab  *ngFor="let tab1 of tabs; let index = index" [label]="tab1" >

@@ -1,0 +1,39 @@
+
+   { "en-US":{
+        "wrapper1":{
+            "ticketpurchased": "Tickets purchased successfully",
+            "gotfree": "Free tickets you got.",
+            "maxTicketsPurchased": "Maximum tickets purchased."
+        },
+        "game1":{
+            "jackpotId": "Jackpot ID",
+            "payout": "Payout",
+            "winTrigger": "Win trigger",
+            "winnerOrCommunity": "Winner / Community"
+        },
+        "chat1":{
+            "chat_skill_level": "Chat skill level: %s",
+            "pending_friends": "(Pending friends: %s)",
+            "no_buddies": "No buddies found."
+        }
+    },
+    "pt-BR":{
+        "wrapper2":{
+            "ticketpurchased": "Tickets purchased successfully",
+            "gotfree": "Free tickets you got.",
+            "maxTicketsPurchased": "Maximum tickets purchased."
+        },
+        "game2":{
+            "jackpotId": "Jackpot ID",
+            "payout": "Payout",
+            "winTrigger": "Win trigger",
+            "winnerOrCommunity": "Winner / Community"
+        },
+        "chat2":{
+            "chat_skill_level": "Chat skill level: %s",
+            "pending_friends": "(Pending friends: %s)",
+            "no_buddies": "No buddies found."
+        }
+    }
+}
+

@@ -11,6 +11,7 @@ import { MatTabChangeEvent, MatTabGroup } from "@angular/material/tabs";
 })
 export class LanguageGenerateComponent implements OnInit {
   // tabs = ["First", "Second", "Third"];
+ selected = new FormControl(0);
  languageCode;
   indexValue=0;
   // selected = new FormControl(1);
@@ -23,7 +24,6 @@ data;
     // console.log('index => ', tabChangeEvent.index);
     this.indexValue=tabChangeEvent.index;
     this.display();
-
   }
   constructor() {
     this.data = {
@@ -83,7 +83,13 @@ data;
   }
 
   addTab(){
-    this.data["en-PS"]=this.data["en-US"];
+    this.data["en-ps"]=this.data["en-US"];
+    // this.data["en-ps1"]=this.data["en-US"];
+
+     this.tabs=Object.keys(this.data).filter(data=>{
+    return data;
+  });
     console.log(this.data);
+    // code.value='';
   }
 }

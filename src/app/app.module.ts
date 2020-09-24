@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
+import { LangService } from './lang.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,
@@ -22,6 +23,7 @@ import {MatTableModule} from '@angular/material/table';
     MatRippleModule,
     MatTableModule ],
   declarations: [ AppComponent, HelloComponent, LanguageGenerateComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [LangService]
 })
 export class AppModule { }
